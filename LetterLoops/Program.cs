@@ -4,29 +4,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace LetterLoops
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var output = "";
-            var inputs = new List<Inputs>()
+            var inputs = new List<String>()
             {
-                new Inputs {AlphaString = "abcd"},
-                new Inputs {AlphaString = "RqaEzty"},
-                new Inputs {AlphaString = "CwAt"}
+               "AbCdef"
             };
 
-            foreach (var input in inputs)
-            {
-                foreach (var alpha in input.AlphaString)
-                {
-                    Console.WriteLine(alpha ++);
-                };
-            }
+            foreach(var input in inputs)
+            {   
+                var lowerCase = input.ToLower();
+                  
+                 for(int i = 0; i < lowerCase.Length; i++)
+                 {
+                    var letter = lowerCase[i];
 
-            Console.ReadLine();
+                     for(int j = 0; j < i + 1; j++)
+                     {
+                        if(j == 0)
+                        {
+                            Console.Write(Char.ToUpper(letter));
+                        }
+                        else 
+                        {
+                            Console.Write(letter);
+                        }
+                        if(j == i)
+                        {
+                            Console.Write("-");
+                        }
+
+                     }
+                 }     
+            }
+        //Console.Write("\b \b");
+        Console.ReadLine();
         }
     }
 }
