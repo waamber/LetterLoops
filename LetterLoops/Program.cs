@@ -11,9 +11,11 @@ namespace LetterLoops
     {
         static void Main(string[] args)
         {
+            var typed = Console.ReadLine();
+
             var inputs = new List<String>()
             {
-               "AbCdef"
+               typed
             };
 
             foreach(var input in inputs)
@@ -42,7 +44,7 @@ namespace LetterLoops
                      }
                  }     
             }
-        //Console.Write("\b \b");
+        Console.Write("\b \b");
         Console.ReadLine();
         }
     }
